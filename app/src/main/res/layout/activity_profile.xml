@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    tools:context=".ProfileActivity">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginRight="30dp"
+    android:elevation="5dp"
+    android:outlineSpotShadowColor="@color/colorAccent"
+    app:cardCornerRadius="10dp"
+    tools:context=".view.ProfileActivity">
+
     <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -14,55 +21,77 @@
 
         <ImageView
             android:id="@+id/foto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxHeight="50dp"
-            android:maxWidth="50dp"/>
-        <TextView
-            android:id="@+id/data"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="27dp"
-            android:gravity="center"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/foto"
-            android:text="disini data"/>
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_profile" />
+
         <TextView
             android:id="@+id/nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="27dp"
+            android:layout_below="@+id/foto"
+            android:layout_marginTop="20dp"
             android:gravity="center"
+            android:text="Nama"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/data"
-            android:text="disini nama"/>
+            android:gravity="center"
+            android:text="NIM"
+            android:textSize="22dp" />
+
         <TextView
             android:id="@+id/nomor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="27dp"
-            android:textColorLink="@color/colorPrimary"
             android:layout_below="@+id/nama"
+            android:layout_marginTop="20dp"
             android:autoLink="phone"
-            android:gravity="center"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            android:gravity="left"
             android:linksClickable="true"
-            android:text="@string/nomor"/>
+            android:paddingLeft="15dp"
+            android:text="@string/nomor"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="17dp" />
+
         <TextView
             android:id="@+id/alamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="27dp"
-            android:gravity="center"
             android:layout_below="@+id/nomor"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_address"
+            android:drawablePadding="10dp"
+            android:gravity="left"
             android:linksClickable="true"
-            android:text="@string/location"/>
+            android:paddingLeft="15dp"
+            android:text="@string/location"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="17dp" />
+
         <TextView
             android:id="@+id/sosmed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="27dp"
-            android:gravity="center"
             android:layout_below="@+id/alamat"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_instagram"
+            android:drawablePadding="10dp"
+            android:gravity="left"
             android:linksClickable="true"
-            android:text="@string/sosmed"/>
+            android:paddingLeft="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/sosmed"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textSize="17dp" />
     </LinearLayout>
-</RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,10 +1,11 @@
-package com.msmi.angkringansaid;
+package com.msmi.angkringansaid.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,11 +13,16 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.msmi.angkringansaid.R;
 import com.msmi.angkringansaid.adapter.JajananAdapter;
+import com.msmi.angkringansaid.helper.DatabaseHelperEx;
+import com.msmi.angkringansaid.helper.LocaleHelper;
 import com.msmi.angkringansaid.model.JajananModel;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import io.paperdb.Paper;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelperEx db_jajanan;
@@ -36,15 +42,28 @@ public class MainActivity extends AppCompatActivity {
     int foto_9 = R.drawable.ic_soda_gembira;
     int foto_10 = R.drawable.ic_es_kopi;
 
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(LocaleHelper.onAttach(newBase, "in"));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //set myDb as DatabaseHelper class
+        Paper.init(this);
+        String language = Paper.book().read("language");
+        if (language == null)
+            Paper.book().write("language", "in");
+        updateView((String) Paper.book().read("language"));
+
         db_jajanan = new DatabaseHelperEx(this);
         initRecyclerView();
+    }
+
+    private void updateView(String lang) {
+        LocaleHelper.setLocale(this, lang);
     }
 
     //add data jajanan
@@ -77,16 +96,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadItem() {
-        listJajanan.add(new JajananModel("Nama : Hamburger", "Harga : Rp.20.000,-", "Porsi : 1 Orang", "Description", foto_1));
-        listJajanan.add(new JajananModel("Nama : Kentang Goreng", "Harga : Rp.17.000,-", "Porsi : 1 Orang", "Description", foto_2));
-        listJajanan.add(new JajananModel("Nama : Ayam Goreng", "Harga : Rp.50.000,-", "Porsi : 3 Orang", "Description", foto_3));
-        listJajanan.add(new JajananModel("Nama : Donat", "Harga : Rp.10.000,-", "Porsi : 2 Orang", "Description", foto_4));
-        listJajanan.add(new JajananModel("Nama : Pizza", "Harga : Rp.70.000,-", "porsi : 4 Orang", "Description", foto_5));
-        listJajanan.add(new JajananModel("Nama : Sandwitch", "Harga : Rp.7000,-", "Porsi : 1 Orang", "Description", foto_6));
-        listJajanan.add(new JajananModel("Nama : Sandwitch Telur", "Harga : Rp.10.000", "Porsi : 1 Orang", "Description", foto_7));
-        listJajanan.add(new JajananModel("Nama : Es Krim", "Harga : Rp.7000,-", "Porsi : 1 Orang", "Description", foto_8));
-        listJajanan.add(new JajananModel("Nama : Soda Gembira", "Harga : Rp.10.000,-", "Porsi : 1 Orang", "Description", foto_9));
-        listJajanan.add(new JajananModel("Nama : Es Kopi", "Harga : Rp.15.000,-", "Porsi : 1 Orang", "Description", foto_10));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan1), getString(R.string.harga) + " Rp.20.000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi1), foto_1));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan2), getString(R.string.harga) + " Rp.17.000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi2), foto_2));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan3), getString(R.string.harga) + " Rp.50.000,-", getString(R.string.porsi) + " 3 " + getString(R.string.orang), getString(R.string.deskripsi3), foto_3));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan4), getString(R.string.harga) + " Rp.10.000,-", getString(R.string.porsi) + " 2 " + getString(R.string.orang), getString(R.string.deskripsi4), foto_4));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan5), getString(R.string.harga) + " Rp.70.000,-", getString(R.string.porsi) + " 4 " + getString(R.string.orang), getString(R.string.deskripsi5), foto_5));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan6), getString(R.string.harga) + " Rp.7000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi6), foto_6));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan7), getString(R.string.harga) + " Rp.10.000", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi7), foto_7));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan8), getString(R.string.harga) + " Rp.7000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi8), foto_8));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan9), getString(R.string.harga) + " Rp.10.000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi9), foto_9));
+        listJajanan.add(new JajananModel(getString(R.string.jajanan10), getString(R.string.harga) + " Rp.15.000,-", getString(R.string.porsi) + " 1 " + getString(R.string.orang), getString(R.string.deskripsi10), foto_10));
         adapter.addAll(listJajanan);
     }
 
@@ -105,13 +124,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
             case R.id.language:
-                Toast.makeText(this, "Pilih bahasa", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.indonesia:
+                Paper.book().write("language", "in");
                 Toast.makeText(this, "Bahasa telah di ubah", Toast.LENGTH_SHORT).show();
+                updateView((String) Paper.book().read("language"));
+                finish();
+                startActivity(getIntent());
                 return true;
             case R.id.english:
+                Paper.book().write("language", "en");
                 Toast.makeText(this, "The language has been changed", Toast.LENGTH_SHORT).show();
+                updateView((String) Paper.book().read("language"));
+                finish();
+                startActivity(getIntent());
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

@@ -1,20 +1,44 @@
 <resources>
-    <string name="app_name">Angkringan Said</string>
+    //Profil
+    <string name="app_name" translatable="false">Angkringan Said</string>
     <string name="sosmed">saidirfan31</string>
-    <string name="location">Gang Bidan no.93, Cipadung</string>
+    <string name="location">Gang Bidan No.93, Cipadung</string>
     <string name="nomor">089619449046</string>
 
+    //Opsi
+    <string name="profile">Profil</string>
+    <string name="detail">Detail</string>
+    <string name="bahasa">Pilih Bahasa</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="inggris">Inggris</string>
+
+    //Jajanan
+    <string name="jajanan1">Hamburger</string>
+    <string name="jajanan2">Kentang Goreng</string>
+    <string name="jajanan3">Ayam Goreng</string>
+    <string name="jajanan4">Donat</string>
+    <string name="jajanan5">Pizza</string>
+    <string name="jajanan6">Sandwitch</string>
+    <string name="jajanan7">Sandwitch Telur</string>
+    <string name="jajanan8">Es Krim</string>
+    <string name="jajanan9">Soda Gembira</string>
+    <string name="jajanan10">Es Kopi</string>
+
     //Deskripsi
-<!--    <string name="foto1"></string>-->
-<!--    <string name="foto2"></string>-->
-<!--    <string name="foto3"></string>-->
-<!--    <string name="foto4"></string>-->
-<!--    <string name="foto5"></string>-->
-<!--    <string name="foto6"></string>-->
-<!--    <string name="foto7"></string>-->
-<!--    <string name="foto1"></string>-->
-<!--    <string name="foto1"></string>-->
-<!--    <string name="foto1"></string>-->
-<!--    <string name="foto1"></string>-->
-<!--    <string name="foto1"></string>-->
+    <string name="deskripsi1">Hamburger khas Angkringan Said dengan menggunakan bahan olahan sendiri</string>
+    <string name="deskripsi2">Kentang Goreng yang menggunakan kentang hasil budidaya milik Angkiringan Said</string>
+    <string name="deskripsi3">Ayam Goreng yang menggunakan ayam hasil budidaya milik Angkringan Said</string>
+    <string name="deskripsi4">Donat yang memiliki berbagai varian rasa seperti coklat, oreo, karamel dan lain-lain</string>
+    <string name="deskripsi5">Pizza dengan topping ayam, sosis, sayuran, serta bumbu khas dari Angkringan Said</string>
+    <string name="deskripsi6">Sandwitch yang dengan isi sayuran dengan bumbu khas dari Angkringan Said</string>
+    <string name="deskripsi7">Sandwitch Telur yang merupakan andalan dari Angkringan Said</string>
+    <string name="deskripsi8">Es Krim dengan varian rasa stroberi, vanilla, coklat dan lain-lain</string>
+    <string name="deskripsi9">Soda Gembira racikan Angkringan Said yang membuat harimu lebih gembira</string>
+    <string name="deskripsi10">Es Kopi andalan Angkringan Said dengan menggunakan kopi pilihan yang terjamin</string>
+
+    //List
+    <string name="harga">Harga :</string>
+    <string name="porsi">Porsi :</string>
+    <string name="orang">Orang</string>
+
 </resources>

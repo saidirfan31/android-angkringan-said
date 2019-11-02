@@ -15,6 +15,7 @@ public class JajananModel {
         this.DesCription = desCription;
         this.imgJajanan = imgJajanan;
     }
+
     public String getName() {
         return name;
     }

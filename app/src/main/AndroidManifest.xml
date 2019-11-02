@@ -3,20 +3,30 @@
     package="com.msmi.angkringansaid">
 
     <application
+        android:name=".helper.LanguageHelper"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.msmi.angkringansaid.DetailJajananActivity"></activity>
-        <activity android:name="com.msmi.angkringansaid.ProfileActivity">
-
+        <activity android:name=".view.MainActivity"></activity>
+        <activity android:name=".view.DetailJajananActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:label="@string/detail"
+                android:value=".view.MainActivity" />
         </activity>
-        <activity android:name="com.msmi.angkringansaid.MainActivity">
+
+        <activity android:name=".view.ProfileActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:label="@string/profile"
+                android:value=".view.MainActivity" />
+        </activity>
+        <activity android:name=".view.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

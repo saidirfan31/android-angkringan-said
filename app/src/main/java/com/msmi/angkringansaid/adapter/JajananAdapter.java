@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.msmi.angkringansaid.R;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.msmi.angkringansaid.model.JajananModel;
@@ -55,7 +56,7 @@ public class JajananAdapter extends RecyclerView.Adapter<JajananAdapter.MyViewHo
         mNama = holder.itemView.findViewById(R.id.txt_name_jajanan);
         mharga = holder.itemView.findViewById(R.id.txt_harga);
         mporsi = holder.itemView.findViewById(R.id.txt_porsi);
-        mFoto = holder.itemView.findViewById(R.id.img_movie);
+        mFoto = holder.itemView.findViewById(R.id.img_jajanan);
 
         mNama.setText(item.getName());
         mharga.setText(item.getharga());

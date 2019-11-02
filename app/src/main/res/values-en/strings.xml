@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Angkringan Said</string>
+    <string name="bahasa">Change Language</string>
+    <string name="deskripsi1">Typical Angkringan Said Hamburger using its own processed ingredients</string>
+    <string name="deskripsi10">Ice Coffee mainstay of Angkringan Said by using guaranteed coffee choices</string>
+    <string name="deskripsi2">French Fries using cultivated potatoes belonging to Angkiringan Said</string>
+    <string name="deskripsi3">Fried Chicken that uses Angkringan Said\'s farming chicken</string>
+    <string name="deskripsi4">Donuts that have various flavors such as chocolate, oreo, caramel and others</string>
+    <string name="deskripsi5">Pizza topped with chicken, sausage, vegetables, and special spices from Angkringan Said</string>
+    <string name="deskripsi6">Sandwitch filled with vegetables with special spices from Angkringan Said</string>
+    <string name="deskripsi7">Sandwitch Egg which is the mainstay of Angkringan Said</string>
+    <string name="deskripsi8">Ice Cream with strawberry, vanilla, chocolate and other flavors</string>
+    <string name="deskripsi9">Joyful Soda concoction of Angkringan Said that makes your day happier</string>
+    <string name="harga">Price :</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="inggris">English</string>
+    <string name="jajanan1">Hamburger</string>
+    <string name="jajanan10">Ice Coffee</string>
+    <string name="jajanan2">French Fries</string>
+    <string name="jajanan3">Fried Chicken</string>
+    <string name="jajanan4">Donuts</string>
+    <string name="jajanan5">Pizza</string>
+    <string name="jajanan6">Sandwitch</string>
+    <string name="jajanan7">Egg Sandwitch</string>
+    <string name="jajanan8">Ice Cream</string>
+    <string name="jajanan9">Joyful Soda</string>
+    <string name="location">Gang Bidan No. 93, Cipadung</string>
+    <string name="nomor">089619449046</string>
+    <string name="orang">person</string>
+    <string name="porsi">Portion :</string>
+    <string name="profile">Profile</string>
+    <string name="detail">Detail</string>
+    <string name="sosmed">saidirfan31</string>
+</resources>

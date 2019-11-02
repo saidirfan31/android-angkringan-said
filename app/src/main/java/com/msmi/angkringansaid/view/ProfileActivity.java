@@ -1,4 +1,4 @@
-package com.msmi.angkringansaid;
+package com.msmi.angkringansaid.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,34 +10,39 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.msmi.angkringansaid.R;
+import com.msmi.angkringansaid.helper.DatabaseHelper;
+
 public class ProfileActivity extends AppCompatActivity {
     DatabaseHelper myDb;
 
-    int foto_profil = R.drawable.foto_bulat;
+    int foto_profil = R.drawable.ic_profile;
     String nim = "1167050107";
     String nama = "Muhammad Said Marzuqi";
     String nomor = "089619449046";
     String alamat = "https://goo.gl/maps/LFaKFz7EJiVsd3RZ7";
-    String sosmed = "https://instagram.com/have_fahn";
+    String sosmed = "https://instagram.com/saidirfan31";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        setTitle("Profil");
 
         //set myDb as DatabaseHelper class
         myDb = new DatabaseHelper(this);
 
         //Send Data to SQLite
-        addDataProfile(nim,nama,nomor,alamat,sosmed,foto_profil);
+        addDataProfile(nim, nama, nomor, alamat, sosmed, foto_profil);
 
         //Menampilkan data
         viewAll();
     }
 
     //add data profile
-    public void addDataProfile(String nim, String nama, String nomor, String alamat, String sosmed,int foto){;
-        myDb.insertData(nim,nama,nomor,alamat,sosmed,foto);
+    public void addDataProfile(String nim, String nama, String nomor, String alamat, String sosmed, int foto) {
+        ;
+        myDb.insertData(nim, nama, nomor, alamat, sosmed, foto);
     }
 
     //View Data Profile
@@ -53,11 +58,11 @@ public class ProfileActivity extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
 
         while (res.moveToNext()) {
-            buffer.append(res.getString(0)+",");
-            buffer.append(res.getString(1)+",");
-            buffer.append(res.getString(2)+",");
-            buffer.append(res.getString(3)+",");
-            buffer.append(res.getString(4)+",");
+            buffer.append(res.getString(0) + ",");
+            buffer.append(res.getString(1) + ",");
+            buffer.append(res.getString(2) + ",");
+            buffer.append(res.getString(3) + ",");
+            buffer.append(res.getString(4) + ",");
             buffer.append(res.getInt(5));
         }
         mData.setText(buffer);
